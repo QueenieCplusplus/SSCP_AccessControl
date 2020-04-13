@@ -58,7 +58,7 @@ class token_gen_api():
                     "Accept" : "application/json"
                     }
 
-        resp = requests.get(self.url, headers=headers)
+        resp = requests.get(self.url, headers=token_headers)
 
         if resp.status_code==200:
             return True, resp.json()

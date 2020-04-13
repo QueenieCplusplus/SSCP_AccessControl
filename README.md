@@ -140,7 +140,16 @@ to define access control list to sys can facilitate user access to data too, whi
     token_header = {  "alg": "HS256", "typ": "JWT"}
 
     def func_name(param):
-        pyload =
+        pyload = {
+                  'user_id':001122,
+                  'init_date':20200413,
+                  'expired_date':202021012
+                  'mapping_info' = param
+                  }
+        
+    token = jwt.encode(payload, private_key, algorithm='RS256', headers=token_header)
+
+    return token
 
 
 

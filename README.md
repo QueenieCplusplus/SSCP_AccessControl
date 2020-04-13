@@ -133,6 +133,16 @@ Access Control Framework:
 to define access control list to sys can facilitate user access to data too, which also may include access to network also.
 
 
+# Token Generator
+
+    import jwt
+
+    token_header = {  "alg": "HS256", "typ": "JWT"}
+
+    def func_name(param):
+        pyload =
+
+
 
 
 

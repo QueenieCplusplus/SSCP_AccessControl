@@ -46,7 +46,7 @@ class token_gen_api():
         return token
 
     def token_decode(self, jwt_token):
-        dec_token = jwt.decode(jwt_token, public_key, audience=self.timestamp, algorithms='RS256')
+        dec_token = jwt.decode(token, public_key, audience=self.timestamp, algorithms='RS256')
         
         return dec_token
 
@@ -75,8 +75,8 @@ if __name__ == '__main__':
     # decoded_content = token_gen_agent.token_decode(token)
     # print(decoded_content)
 
-    response_status, json_string = token_gen_agent.send_token(token)
-    print(response_status, json_string)
+    # response_status, json_string = token_gen_agent.send_token(token)
+    # print(response_status, json_string)
     
 # pip install oauthlib==0.7.2
     

@@ -36,7 +36,7 @@ class token_gen_api():
                     # "uuid"   : str(uuid.uuid4()), 
                     "sub": " ",
                     "name": " Vivy Chen",
-                    "iat": 1516239022,
+                    "iat": 998877663,
                     "conditionMap"  : json.dumps({  "userAccountId" : "{:6}".format(id), #被查驗者帳號，6 碼
                                                     "applyYyyＭmＤd" : "{:7}".format(apply_date), #異動帳號日期，民國格式7 碼 idMarkDate
                                                     }),

@@ -135,25 +135,7 @@ to define access control list to sys can facilitate user access to data too, whi
 
 # Token Generator
 
-Token_gen
-
-    import jwt
-
-    token_header = {  "alg": "HS256", "typ": "JWT"}
-
-    def func_name(param):
-        pyload = {
-                  'user_id':001122,
-                  'init_date':20200413,
-                  'expired_date':202021012
-                  'mapping_info' = param
-                  }
-        
-    token = jwt.encode(payload, private_key, algorithm='RS256', headers=token_header)
-
-    return token
-
-Pub_Key
+公私鑰 Pub_Key
 
     import os
 
@@ -164,6 +146,33 @@ Pub_Key
     with open(os.path.join(os.path.dirname(__file__), 'public_pwd.pem'), 'rb') as pwd:
         public_key = pwd.read()
     print(public_key)
+    
+
+用私鑰封裝（編碼）文件
+
+    import jwt
+
+    token_header = {  "alg": "HS256", "typ": "JWT"} # 跟打API的封包標頭有關
+
+    def func_name(param):
+        pyload = {
+                  'user_id':001122,
+                  'init_date':20200413,
+                  'expired_date':202021012,
+                  'mapping_info' = param
+                  }
+        
+    # 代碼符號標記等同於 使用jwt工具打包隱私訊息與私有鑰匙以及加入標頭修改的內容
+    token = jwt.encode(payload, private_key, algorithm='RS256', headers=token_header)
+
+    return token
+    
+用公鑰打開（解碼）文件
+
+    def function_name(self, token):
+            dec_token = jwt.decode(jwt_token, public_key, audience=self.timestamp, algorithms='RS256')
+
+            return dec_token
 
 
 

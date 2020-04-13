@@ -135,6 +135,8 @@ to define access control list to sys can facilitate user access to data too, whi
 
 # Token Generator
 
+Token_gen
+
     import jwt
 
     token_header = {  "alg": "HS256", "typ": "JWT"}
@@ -151,7 +153,17 @@ to define access control list to sys can facilitate user access to data too, whi
 
     return token
 
+Pub_Key
 
+    import os
+
+    with open(os.path.join(os.path.dirname(__file__), 'private_pwd.pem'), 'rb') as pwd:
+        private_key = pwd.read()
+    print(private_key)
+
+    with open(os.path.join(os.path.dirname(__file__), 'public_pwd.pem'), 'rb') as pwd:
+        public_key = pwd.read()
+    print(public_key)
 
 
 

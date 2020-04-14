@@ -45,7 +45,7 @@ class token_gen_api():
 
         return token
 
-    def token_decode(self, jwt_token):
+    def token_decode(self, token):
         dec_token = jwt.decode(token, public_key, audience=self.timestamp, algorithms='RS256')
         
         return dec_token
